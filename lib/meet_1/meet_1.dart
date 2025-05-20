@@ -176,7 +176,7 @@ class MeetSatu extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'qr_code');
+          Navigator.pushNamed(context, '/qr_code');
         },
         child: Icon(Icons.qr_code_rounded),
         backgroundColor: Colors.amber,

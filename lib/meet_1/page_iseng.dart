@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class IsengNih extends StatelessWidget {
-  const IsengNih({super.key});
+  IsengNih({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,8 @@ class IsengNih extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'HAYO KM PASTI MAU SCAN',
+          'HAYO KM PASTI NGIRA INI SCAN BARCODE',
+          textAlign: TextAlign.center,
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
       ),

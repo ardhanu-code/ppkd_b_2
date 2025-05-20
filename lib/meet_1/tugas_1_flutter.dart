@@ -20,7 +20,9 @@ class TugasSatu extends StatelessWidget {
               Text('Jakarta', style: TextStyle(fontSize: 18)),
             ],
           ),
-          Text('Seorang pelajar yang sedang belajar Flutter'),
+          Text(
+            'Seorang pelajar tampan yang sedang belajar Flutter dengan teman-teman',
+          ),
         ],
       ),
     );
