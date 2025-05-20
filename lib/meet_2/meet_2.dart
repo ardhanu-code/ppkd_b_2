@@ -86,6 +86,16 @@ class MeetDua extends StatelessWidget {
               ),
             ),
           ),
+          //Expanded
+          Row(
+            children: [
+              Expanded(child: Container(height: 40, color: Colors.red)),
+              Spacer(),
+              Expanded(child: Container(height: 40, color: Colors.yellow)),
+              Expanded(child: Container(height: 40, color: Colors.green)),
+            ],
+          ),
+          Expanded(child: Container(color: Colors.blueGrey)),
         ],
       ),
     );
