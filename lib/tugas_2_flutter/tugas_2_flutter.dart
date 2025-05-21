@@ -124,7 +124,6 @@ class TugasDua extends StatelessWidget {
                   child: Container(
                     height: 40,
                     width: 350,
-                    decoration: BoxDecoration(color: Colors.blueAccent),
                     child: Row(
                       children: [
                         SizedBox(width: 10),
