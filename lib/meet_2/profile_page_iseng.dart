@@ -19,10 +19,15 @@ class Profile extends StatelessWidget {
             height: 250,
             //color: Colors.blue,
             child: Center(
-              child: CircleAvatar(
-                radius: 80,
-                backgroundColor: Colors.grey[300],
-                child: Icon(Icons.person, size: 120, color: Colors.grey),
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 80,
+                    backgroundColor: Colors.grey[300],
+                    child: Icon(Icons.person, size: 120, color: Colors.grey),
+                  ),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.camera)),
+                ],
               ),
             ),
           ),
