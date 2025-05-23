@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 class TugasTiga extends StatefulWidget {
@@ -159,28 +160,172 @@ class _TugasTigaState extends State<TugasTiga> {
                   crossAxisCount: 3,
                   children: <Widget>[
                     Container(
-                      color: Colors.amber,
-                      child: Stack(children: [Center(child: Text('Photo 1'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '1',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
-                      color: Colors.blue,
-                      child: Stack(children: [Center(child: Text('Photo 2'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '2',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
-                      color: Colors.redAccent,
-                      child: Stack(children: [Center(child: Text('Photo 3'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '3',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
-                      color: Colors.redAccent,
-                      child: Stack(children: [Center(child: Text('Video 4'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '4',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
-                      color: Colors.amber,
-                      child: Stack(children: [Center(child: Text('Video 5'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '5',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
-                      color: Colors.blue,
-                      child: Stack(children: [Center(child: Text('Photo 6'))]),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://i.pravatar.cc/150?img=${faker.randomGenerator.integer(70)}',
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 15,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  '6',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
