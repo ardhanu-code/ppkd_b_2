@@ -21,7 +21,6 @@ class ToDoApp extends StatefulWidget {
 }
 
 class _TodoAppState extends State<ToDoApp> {
-  // Controllers for textfields
   TextEditingController _titleController = TextEditingController();
   TextEditingController _descriptionController = TextEditingController();
 
