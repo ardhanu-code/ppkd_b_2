@@ -31,6 +31,12 @@ class _TugasTigaState extends State<TugasTiga> {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue[900],
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

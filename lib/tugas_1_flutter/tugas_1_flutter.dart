@@ -9,6 +9,12 @@ class TugasSatu extends StatelessWidget {
       appBar: AppBar(
         title: Text('Profil Saya', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.indigoAccent,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -69,6 +69,7 @@ class _TodoAppState extends State<ToDoApp> {
       _descriptionController.clear();
     });
   }
+
   void _hapusTugas(int index) {
     setState(() {
       tugas.removeAt(index);
@@ -82,6 +83,12 @@ class _TodoAppState extends State<ToDoApp> {
         title: Text('To Do Apps'),
         backgroundColor: Colors.amber,
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),

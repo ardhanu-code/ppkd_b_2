@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_2/meet_1/page_iseng.dart';
-import 'package:ppkd_b_2/tugas_6_flutter/tugas_6_flutter.dart';
+import 'package:ppkd_b_2/navigator_routes/home_navigate_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TugasEnam(),
+      home: NavigatePage(),
       routes: {'/qr_code': (context) => IsengNih()},
     );
   }

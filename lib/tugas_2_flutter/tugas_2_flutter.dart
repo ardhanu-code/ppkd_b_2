@@ -55,6 +55,12 @@ class _TugasDuaState extends State<TugasDua> {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: false,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+        ),
       ),
       body: Column(
         children: [

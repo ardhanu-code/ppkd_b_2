@@ -40,6 +40,12 @@ class _TugasLimaState extends State<TugasLima> {
             icon: Icon(Icons.telegram, size: 35, color: Colors.white),
           ),
         ],
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+        ),
       ),
 
       body: Padding(

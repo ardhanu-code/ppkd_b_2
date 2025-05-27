@@ -24,6 +24,12 @@ class _TugasEmpatState extends State<TugasEmpat> {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue[900],
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+        ),
       ),
       body: ListView(
         children: [
