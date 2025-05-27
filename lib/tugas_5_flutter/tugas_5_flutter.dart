@@ -8,11 +8,11 @@ class TugasLima extends StatefulWidget {
 }
 
 class _TugasLimaState extends State<TugasLima> {
+  int countLike = 0;
+  bool isFavorited = false;
+  bool isShowText = false;
   String namaUser = '';
   String deskripsi = '';
-  bool isFavorited = false;
-  int countLike = 0;
-  bool isShowText = false;
 
   void _addLikeCount() {
     setState(() {
