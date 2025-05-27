@@ -83,7 +83,7 @@ class _TugasEnamState extends State<TugasEnam> {
                 ),
               ),
             ),
-            SizedBox(height: 32),
+            SizedBox(height: 31),
             Text('Phone Number', style: TextStyle(fontSize: 12)),
             SizedBox(height: 18),
             SizedBox(
@@ -114,12 +114,12 @@ class _TugasEnamState extends State<TugasEnam> {
               height: 48,
               child: TextField(
                 style: TextStyle(fontSize: 14),
-                obscureText: !isVisible, 
+                obscureText: !isVisible,
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
-                        isVisible = !isVisible; 
+                        isVisible = !isVisible;
                       });
                     },
                     icon: Icon(
