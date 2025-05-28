@@ -21,6 +21,7 @@ class _TugasTujuhBState extends State<TugasTujuhB> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Switch(
+                  
                   activeTrackColor: Colors.blueAccent,
                   value: isSwitchOn,
                   onChanged: (value) {
