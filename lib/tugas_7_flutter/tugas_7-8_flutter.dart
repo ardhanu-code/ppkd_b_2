@@ -23,7 +23,7 @@ class _TugasTujuhState extends State<TugasTujuh> {
     TugasTujuhD(),
     TugasTujuhE(),
   ];
-
+  //===================Tugas 8=========================
   final aboutScreen = const Padding(
     padding: EdgeInsets.all(16.0),
     child: Column(
@@ -36,12 +36,12 @@ class _TugasTujuhState extends State<TugasTujuh> {
         SizedBox(height: 16),
         Text('Aplikasi ini dibuat sebagai latihan pengembangan UI di Flutter.'),
         SizedBox(height: 8),
-        Text('Nama Pembuat: Shaun Murphy'),
+        Text('Nama Pembuat: ardhanu'),
         Text('Versi: 1.0.0'),
       ],
     ),
   );
-
+  //===================Tugas 8=========================
   @override
   Widget build(BuildContext context) {
     final isHomeTab = _bottomNavIndex == 0;
@@ -129,6 +129,7 @@ class _TugasTujuhState extends State<TugasTujuh> {
               )
               : null,
       body: Padding(padding: const EdgeInsets.all(12.0), child: screenContent),
+      //===================Tugas 8=========================
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _bottomNavIndex,
         onTap: (index) {
@@ -144,6 +145,7 @@ class _TugasTujuhState extends State<TugasTujuh> {
           ),
         ],
       ),
+      //===================Tugas 8=========================
     );
   }
 }
