@@ -32,7 +32,7 @@ class NavigatePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      'Choose one',
+                      'Main Menu',
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,

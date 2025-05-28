@@ -62,167 +62,174 @@ class _TugasDuaState extends State<TugasDua> {
           icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          CircleAvatar(radius: 80, backgroundImage: NetworkImage(url)),
-          SizedBox(height: 20),
-          Center(child: Text('Sakti Ardhanu', style: TextStyle(fontSize: 24))),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 30),
+            CircleAvatar(radius: 80, backgroundImage: NetworkImage(url)),
+            SizedBox(height: 20),
+            Center(
+              child: Text('Sakti Ardhanu', style: TextStyle(fontSize: 24)),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 50,
+                width: 350,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Color(0xff393E46),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(Icons.email, color: Colors.white),
+                      SizedBox(width: 8),
+                      Text(
+                        'saktiardhanu2nd@gmail.com',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
               height: 50,
               width: 350,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
                 color: Color(0xff393E46),
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 10, right: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.email, color: Colors.white),
-                    SizedBox(width: 8),
+                    Icon(Icons.phone, color: Colors.white),
+                    Spacer(),
                     Text(
-                      'saktiardhanu2nd@gmail.com',
+                      '0813-1503-6537',
                       style: TextStyle(color: Colors.white),
                     ),
                   ],
                 ),
               ),
             ),
-          ),
-          Container(
-            height: 50,
-            width: 350,
-            decoration: BoxDecoration(
-              color: Color(0xff393E46),
-              borderRadius: BorderRadius.circular(8),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                SizedBox(width: 32),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.all(14),
+                    height: 50,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xffDFD0B8),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      'Postingan: $postingan',
+                      style: TextStyle(fontSize: 16, color: Color(0xff222831)),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: Color(0xffDFD0B8),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    height: 50,
+                    width: 100,
+                    child: Text(
+                      'Followers: $followers',
+                      style: TextStyle(fontSize: 16, color: Color(0xff222831)),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 30),
+              ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10, right: 20),
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: SingleChildScrollView(
+                  child: Text(deksripsi, textAlign: TextAlign.justify),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
               child: Row(
                 children: [
-                  Icon(Icons.phone, color: Colors.white),
-                  Spacer(),
-                  Text('0813-1503-6537', style: TextStyle(color: Colors.white)),
+                  Expanded(
+                    child: Container(
+                      height: 40,
+                      width: 350,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                _incrementPostingan();
+                              });
+                            },
+                            child: Text(
+                              'Tambah Postingan',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xff948979),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 40,
+                      width: 350,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                _incrementFollowers();
+                              });
+                            },
+                            child: Text(
+                              'Tambah Followers',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xff948979),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-          SizedBox(height: 10),
-          Row(
-            children: [
-              SizedBox(width: 32),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(14),
-                  height: 50,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xffDFD0B8),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    'Postingan: $postingan',
-                    style: TextStyle(fontSize: 16, color: Color(0xff222831)),
-                  ),
-                ),
-              ),
-              SizedBox(width: 20),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: Color(0xffDFD0B8),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  height: 50,
-                  width: 100,
-                  child: Text(
-                    'Followers: $followers',
-                    style: TextStyle(fontSize: 16, color: Color(0xff222831)),
-                  ),
-                ),
-              ),
-              SizedBox(width: 30),
-            ],
-          ),
-          SizedBox(
-            height: 120,
-            width: 400,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: SingleChildScrollView(
-                child: Text(deksripsi, textAlign: TextAlign.justify),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 40,
-                    width: 350,
-                    child: Row(
-                      children: [
-                        SizedBox(width: 8),
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _incrementPostingan();
-                            });
-                          },
-                          child: Text(
-                            'Tambah Postingan',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff948979),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 40,
-                    width: 350,
-                    child: Row(
-                      children: [
-                        SizedBox(width: 8),
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _incrementFollowers();
-                            });
-                          },
-                          child: Text(
-                            'Tambah Followers',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff948979),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
