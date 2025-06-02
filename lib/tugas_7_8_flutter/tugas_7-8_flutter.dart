@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_2/tugas_7_flutter/tugas_7_a.dart';
-import 'package:ppkd_b_2/tugas_7_flutter/tugas_7_b.dart';
-import 'package:ppkd_b_2/tugas_7_flutter/tugas_7_c.dart';
-import 'package:ppkd_b_2/tugas_7_flutter/tugas_7_d.dart';
-import 'package:ppkd_b_2/tugas_7_flutter/tugas_7_e.dart';
+import 'package:ppkd_b_2/meet_14/meet_14_a.dart';
+import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_a.dart';
+import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_b.dart';
+import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_c.dart';
+import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_d.dart';
+import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_e.dart';
 
 class TugasTujuh extends StatefulWidget {
   const TugasTujuh({super.key});
@@ -22,6 +23,7 @@ class _TugasTujuhState extends State<TugasTujuh> {
     TugasTujuhC(),
     TugasTujuhD(),
     TugasTujuhE(),
+    MeetEmpatBelasA(),
   ];
   //===================Tugas 8=========================
   final aboutScreen = const Padding(
@@ -121,6 +123,14 @@ class _TugasTujuhState extends State<TugasTujuh> {
                       title: const Text('Atur Pengingat'),
                       onTap: () {
                         setState(() => _selectedDrawerIndex = 4);
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.timer_outlined),
+                      title: const Text('Meet Empat Belas'),
+                      onTap: () {
+                        setState(() => _selectedDrawerIndex = 5);
                         Navigator.pop(context);
                       },
                     ),
