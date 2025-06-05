@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b_2/helper/preferences.dart';
 import 'package:ppkd_b_2/meet_14/meet_14_a.dart';
 import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_a.dart';
 import 'package:ppkd_b_2/tugas_7_8_flutter/tugas_7_b.dart';
@@ -132,6 +133,23 @@ class _TugasTujuhState extends State<TugasTujuh> {
                       onTap: () {
                         setState(() => _selectedDrawerIndex = 5);
                         Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.exit_to_app, color: Colors.red),
+                      title: const Text(
+                        'Exit',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          PreferenceHandler.deleteLogin();
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            '/login',
+                            (route) => false,
+                          );
+                        });
                       },
                     ),
                   ],

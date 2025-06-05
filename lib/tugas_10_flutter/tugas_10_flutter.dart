@@ -94,6 +94,7 @@ class _TugasSepuluhState extends State<TugasSepuluh> {
               ),
               SizedBox(height: 16),
               ElevatedButton(
+                
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     showDialog(
@@ -125,7 +126,10 @@ class _TugasSepuluhState extends State<TugasSepuluh> {
                                   ),
                                 );
                               },
-                              child: Text('Lanjut'),
+                              child: Text(
+                                'Lanjut',
+                                style: TextStyle(color: Colors.indigo),
+                              ),
                             ),
                           ],
                         );

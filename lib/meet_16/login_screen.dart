@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_2/helper/preferences.dart';
+import 'package:ppkd_b_2/meet_16/database/db_helper.dart';
+import 'package:ppkd_b_2/meet_16/register_screen.dart';
 
-class TugasEnam extends StatefulWidget {
-  const TugasEnam({super.key});
-
+class LoginScreen extends StatefulWidget {
+  LoginScreen({super.key});
+  static const String id = "/login_screen_app";
   @override
-  State<TugasEnam> createState() => _TugasEnamState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _TugasEnamState extends State<TugasEnam> {
+class _LoginScreenState extends State<LoginScreen> {
   bool isVisible = false;
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,72 +34,14 @@ class _TugasEnamState extends State<TugasEnam> {
                 'Login to access your account',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
               ),
-              SizedBox(height: 24),
-              Container(
-                height: 56,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xffF5F5F5),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Phone Number',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff646464),
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            minimumSize: Size(150, 48),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 8),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Email',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff646464),
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor: Color(0xffF5F5F5),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            minimumSize: Size(150, 48),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               SizedBox(height: 31),
-              Text('Phone Number', style: TextStyle(fontSize: 12)),
+              Text('Username', style: TextStyle(fontSize: 12)),
               SizedBox(height: 18),
               SizedBox(
                 width: double.infinity,
                 height: 48,
-                child: TextField(
+                child: TextFormField(
+                  controller: _usernameController,
                   style: TextStyle(fontSize: 14),
                   decoration: InputDecoration(
                     focusColor: Colors.grey,
@@ -118,7 +64,8 @@ class _TugasEnamState extends State<TugasEnam> {
               SizedBox(
                 width: double.infinity,
                 height: 48,
-                child: TextField(
+                child: TextFormField(
+                  controller: _passwordController,
                   style: TextStyle(fontSize: 14),
                   obscureText: !isVisible,
                   decoration: InputDecoration(
@@ -148,16 +95,37 @@ class _TugasEnamState extends State<TugasEnam> {
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {
-                  PreferenceHandler.saveLogin(true);
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    '/home_screen',
-                    (route) => false,
+                onPressed: () async {
+                  final userData = await DBHelper.loginUser(
+                    _usernameController.text,
+                    _passwordController.text,
                   );
+                  if (userData != null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Berhasil login!'),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Username dan Password tidak terdaftar atau salah!',
+                        ),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  }
+                  // PreferenceHandler.saveLogin(true);
+                  // Navigator.pushNamedAndRemoveUntil(
+                  //   context,
+                  //   '/home_screen',
+                  //   (route) => false,
+                  // );
                 },
                 child: Text(
-                  'Request OTP',
+                  'Login',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -165,7 +133,7 @@ class _TugasEnamState extends State<TugasEnam> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff21BDCA),
+                  backgroundColor: Color.fromARGB(255, 13, 84, 90),
                   elevation: 0,
                   minimumSize: Size(double.infinity, 56),
                   shape: RoundedRectangleBorder(
@@ -272,7 +240,12 @@ class _TugasEnamState extends State<TugasEnam> {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                      );
+                    },
                     child: Text(
                       'Sign Up',
                       style: TextStyle(fontSize: 12, color: Color(0xff21BDCA)),
