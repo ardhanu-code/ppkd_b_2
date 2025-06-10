@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_2/tugas_11_flutter/database/db_helper.dart';
+import 'package:ppkd_b_2/tugas_11_flutter/edit_data_page.dart';
 import 'package:ppkd_b_2/tugas_11_flutter/models/siswa_model.dart';
 
 class TugasBerapaYa extends StatefulWidget {
@@ -28,6 +29,16 @@ class _TugasBerapaYaState extends State<TugasBerapaYa> {
     final data = await DBHelper.getAllSiswa();
     setState(() {
       daftarSiswa = data;
+    });
+  }
+
+  void _editSiswa(SiswaModelTgs siswa) {
+    Navigator.pop(context);
+    Future.delayed(Duration.zero, () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => EditDataPage(siswa: siswa)),
+      ).then((_) => muatData());
     });
   }
 
@@ -189,6 +200,12 @@ class _TugasBerapaYaState extends State<TugasBerapaYa> {
                                     },
                                     child: Text('Tutup'),
                                   ),
+                                  TextButton(
+                                    onPressed: () {
+                                      _editSiswa(siswa);
+                                    },
+                                    child: Text('Edit'),
+                                  ),
                                 ],
                               ),
                         );
@@ -203,7 +220,37 @@ class _TugasBerapaYaState extends State<TugasBerapaYa> {
                         children: [Text('Umur: ${siswa.umur}')],
                       ),
                       trailing: IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final konfirmasi = await showDialog<bool>(
+                            context: context,
+                            builder:
+                                (context) => AlertDialog(
+                                  title: Text('Hapus Data'),
+                                  content: Text(
+                                    'Yakin ingin menghapus ${siswa.nama}?',
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed:
+                                          () => Navigator.pop(context, false),
+                                      child: Text('Batal'),
+                                    ),
+                                    TextButton(
+                                      onPressed:
+                                          () => Navigator.pop(context, true),
+                                      child: Text('Hapus'),
+                                    ),
+                                  ],
+                                ),
+                          );
+                          if (konfirmasi == true) {
+                            await DBHelper.deleteSiswa(siswa.id!);
+                            setState(() {
+                              muatData();
+                            });
+                          }
+                        },
+
                         icon: Icon(Icons.delete),
                       ),
                     ),
