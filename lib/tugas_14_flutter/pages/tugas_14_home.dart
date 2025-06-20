@@ -337,9 +337,24 @@ class _TugasEmpatBelasState extends State<TugasEmpatBelas> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              subtitle: Text(
-                                '${character.status.toString().split('.').last} - ${character.species.toString().split('.').last}',
-                                style: TextStyle(color: AppColor.accentColor),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${character.status.toString().split('.').last} - ${character.species.toString().split('.').last}',
+                                    style: TextStyle(
+                                        color: AppColor.accentColor,
+                                        fontSize: 12),
+                                  ),
+                                  Text(
+                                    'Tap for more details',
+                                    style: TextStyle(
+                                      color: Colors.white.withOpacity(0.4),
+                                      fontSize: 12,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
